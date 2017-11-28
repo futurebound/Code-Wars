@@ -1,0 +1,5 @@
+https://www.codewars.com/kata/abbreviate-a-two-word-name/train/javascript
+
+This kata wanted us to be able to accept a single string, the two word name of the individual, and then return their capitalized initials with a period in between the two letters.
+
+We knew since it only accepted one argument that we needed to use the split method to separate the string into the first and last name. From there, it was just a matter of either slicing or doing some similar method to isolate the first letter of each string. When looking up how to use the slice method for just the first letter, we found the charAt() method and an alternative method which was just using [] notation to navigate the strings. Using the value abbrev which was the original split string, we just used [0] for the fist name and [1] for the second name, and then [0] directly after the first bracket to indicate the first character of each name. We then just called the toUpperCase() method on each, put them in a template literal to include the period in between, then returned that entire line.

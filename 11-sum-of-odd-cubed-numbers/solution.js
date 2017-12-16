@@ -8,5 +8,10 @@ function cubeOdd(arr) {
     }
     let cubed = arr.map(x => x * x * x);
     let filtered = cubed.filter(integer => integer % 2 === 1 || integer % 2 === -1);
-    return filtered.reduce((a, b) => a + b);
+    if (filtered.length === 0) {
+        return 0;
+    }
+    if (filtered.length >= 1) {
+        return filtered.reduce((a, b) => a + b);
+    }
 }

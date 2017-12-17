@@ -7,19 +7,24 @@ function formatWords(words) {
     if (words[0] === '') {
         return '';
     }
+    let onlyWords = words.filter(word => word.length > 0);
     let formatted = '';
-    for (let i = 0; i < words.length; i++) {
-        if (words[i] !== '') {
-            if ((words.length - 2) === i) {
-                formatted += words[i];
-            }
-            else if ((words.length - 1) === i) {
-                formatted += 'and ' + words[i];
-            }
-            else {
-                formatted += words[i] + ', ';
-            }
+
+    for (let i = 0; i < onlyWords.length; i++) {
+        if (i <= onlyWords.length - 3) {
+            formatted += onlyWords[i] + ', ';
+        }
+        if (i === onlyWords.length - 2) {
+            formatted += onlyWords[i];
+        }
+        if (i === onlyWords.length - 1) {
+            formatted += ' and ' + onlyWords[i];
         }
     }
     return formatted;
 }
+
+formatWords(["capital", "dondo", "requiem", "", "red", "", "coral"])
+formatWords(["samurai", "ronin", "shank"])
+formatWords(["", ""])
+formatWords([])

@@ -9,7 +9,6 @@ function formatWords(words) {
     }
     let onlyWords = words.filter(word => word.length > 0);
     let formatted = '';
-
     for (let i = 0; i < onlyWords.length; i++) {
         if (i <= onlyWords.length - 3) {
             formatted += onlyWords[i] + ', ';
@@ -24,7 +23,15 @@ function formatWords(words) {
     return formatted;
 }
 
+describe("Solution", function () {
+    it("test", function () {
+        Test.assertEquals(formatWords([""]), "");
+        Test.assertEquals(formatWords(["capital", "dondo", "requiem", "", "red", "", "coral"]), "capital, dondo, requiem, red and coral");
+        Test.assertEquals(formatWords(['ninja', 'samurai', 'ronin']), "ninja, samurai and ronin")
+    });
+});
+
+
 formatWords(["capital", "dondo", "requiem", "", "red", "", "coral"])
 formatWords(["samurai", "ronin", "shank"])
 formatWords(["", ""])
-formatWords([])
